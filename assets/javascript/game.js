@@ -1,63 +1,37 @@
-// For now these are just some variable I know i'll have to use
+// These are my variables I know I'll have to use
 
 var myDogs = ["pomeranian", "beagle", "corgi", "vizsla", "greyhound", "husky"];
 
-var alphabet = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z"
-];
-
 var wins = 0;
 var wordElement = document.getElementById("the-word");
+var wordBlanks = [];
+var chosenWord;
 
 // When game starts
 window.onload = function() {
   // Computer picks random dog name
-  var chosenWord = myDogs[Math.floor(Math.random() * myDogs.length)];
+  chosenWord = myDogs[Math.floor(Math.random() * myDogs.length)];
 
-  // 1 Loop over the chosen word
+  // Loop over the chosen word
   for (var i = 0; i < chosenWord.length; i++) {
-    console.log("I hate you, ", chosenWord[i]);
-    var letter = chosenWord[i]; // I'm using the index from the for loop to find the letter of the word
-
-    var node = document.createElement("span");
-    node.innerText = "_ ";
-    wordElement.appendChild(node);
+    // Display every character at every index of chosenWord
+    console.log(chosenWord[i]);
+    // Add a new item ("_") to the wordBlanks array
+    wordBlanks.push("_");
+    // Join the elements of the array into a string and display it on the screen
+    document.getElementById("the-word").textContent = wordBlanks.join(" ");
   }
-  // 2 Create an HTML element for each part of the word
-
-  // 3 Attach node element into DOM
 };
 
 // When user presses a key
 document.onkeydown = function(event) {
   // If the entry exists within the alphabet array (must be a letter)
-  if (alphabet.includes(event.key)) {
+  if (chosenWord.includes(event.key)) {
     console.log(event.key);
+    var indexPosition = chosenWord.indexOf(event.key); // Or i could write a for-loop here to replace this
+
+    wordBlanks[indexPosition] = event.key;
+    document.getElementById("the-word").textContent = wordBlanks.join(" "); // and the for-loop would end here
   }
 };
 
