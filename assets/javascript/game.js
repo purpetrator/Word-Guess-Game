@@ -3,9 +3,18 @@
 var myDogs = ["pomeranian", "beagle", "corgi", "vizsla", "greyhound", "husky"];
 
 var wins = 0;
-var wordElement = document.getElementById("the-word");
+var remaining = 10;
+var guessedLetters = [];
 var wordBlanks = [];
 var chosenWord;
+
+// Create variables that hold references to the places in the HTML
+var directionsText = document.getElementById("directions-text");
+var wordElement = document.getElementById("the-word");
+
+var winsText = document.getElementById("totalWins");
+var guessesLeft = document.getElementById("guessesRemaining");
+var guessedAlready = document.getElementById("alreadyGuessed");
 
 // When game starts
 window.onload = function() {
@@ -31,7 +40,30 @@ document.onkeydown = function(event) {
     var indexPosition = chosenWord.indexOf(event.key); // Or i could write a for-loop here to replace this
 
     wordBlanks[indexPosition] = event.key;
+
     document.getElementById("the-word").textContent = wordBlanks.join(" "); // and the for-loop would end here
+
+    // If the entry DOES NOT exist within the alphabet array
+  } else {
+    remaining--; // How do I get this to stop at 0?
+
+    // Add incorrectly guessed letters to guessedLetters array
+    guessedLetters.push(event.key);
+    // Join letters with a space
+    document.getElementById("alreadyGuessed").textContent = guessedLetters.join(
+      " "
+    );
+  }
+
+  // Hide the directions
+  directionsText.textContent = "";
+
+  // Display the wins and guesses on the screen
+  guessesRemaining.textContent = " " + remaining;
+
+  if (remaining == 0) {
+    console.log("you suck");
+    alert("Sorry! You Lose!");
   }
 };
 
