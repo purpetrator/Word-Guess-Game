@@ -128,21 +128,3 @@ document.onkeydown = function(event) {
     }
   }
 };
-
-// Computer randomly picks word
-// Computer presents user with "_" representing each letter of the word
-// User inputs letter
-// If any letter matches, the "_" is replaced with that letter
-// If letter doesn't match, letter is shown under letters already guessed
-// If letter doesn't match, number of guesses remaining decreases by one
-// When number of guesses remaining = 0, user is presented with "Game over"
-// Once all _ are replaced with letters, user alerts 'You win'
-// When user wins, "wins" increases by one
-// When user wins, game resets to new
-
-// Odds and Ends:
-// * How do I reload game and keep cumulative wins?
-// Show dogs?
-// In this example, we instead create a new div called "newDiv".
-// var newDiv = document.createElement("div");
-// var newImg = document.createElement("img");   reference activity 01-04
