@@ -1,7 +1,9 @@
-.hide {
-  opacity: 0%;
+body {
+  background-image: url("Assets/images/pink_rice.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.show {
-  opacity: 100%;
+.jumbotron {
+  background-color: #f9f7f6;
 }

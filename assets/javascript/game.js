@@ -45,8 +45,12 @@ var winsText = document.getElementById("totalWins");
 var guessesLeft = document.getElementById("guessesRemaining");
 var guessedAlready = document.getElementById("alreadyGuessed");
 
-// When game starts
-window.onload = function() {
+// Game Over and Reset
+// I need to reset all my variables except Wins
+function resetGame() {
+  remaining = 10;
+  guessedLetters = [];
+  wordBlanks = [];
   // Computer picks random dog name
   chosenWord = myDogs[Math.floor(Math.random() * myDogs.length)];
 
@@ -58,7 +62,15 @@ window.onload = function() {
     wordBlanks.push("_");
     // Join the elements of the array into a string and display it on the screen
     wordElement.textContent = wordBlanks.join(" ");
+    guessedAlready.textContent = guessedLetters.join(" ");
+    guessesLeft.textContent = remaining;
   }
+}
+
+// When game starts
+window.onload = function() {
+  // Computer picks random dog name
+  resetGame();
 };
 
 // When user presses a key
@@ -98,7 +110,7 @@ document.onkeydown = function(event) {
     if (remaining == 0) {
       console.log("you suck");
       alert("Sorry! You're Out Of Guesses!");
-      confirm("Play again?", location.reload());
+      resetGame();
     }
 
     // Define what a win is and what happens when the word is guessed
@@ -110,6 +122,7 @@ document.onkeydown = function(event) {
       setTimeout(function() {
         alert("You Win!");
       }, 500);
+      resetGame();
     }
   }
 };
@@ -127,3 +140,7 @@ document.onkeydown = function(event) {
 
 // Odds and Ends:
 // * How do I reload game and keep cumulative wins?
+// Show dogs?
+// In this example, we instead create a new div called "newDiv".
+// var newDiv = document.createElement("div");
+// var newImg = document.createElement("img");   reference activity 01-04

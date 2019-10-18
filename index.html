@@ -2,37 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="Word-Guess-Game/assets/css/style.css" />
+
     <title>Word Guessing Game</title>
 </head>
 
 <body>
     <!-- This is the starting message that will disappear -->
-    <div>
-        <p id="directions-text">Press ANY KEY to get started!</p>
+    <div class="container my-4 bg-light p-3 rounded m-3 mx-auto">
+        <div>
+            <p id="directions-text">Press ANY KEY to get started!</p>
+
+        </div>
+
+        <!-- This will be the word you are guessing -->
+        <div id="the-word">
+
+        </div>
+
+        <!-- This is the score -->
+        <div>
+            <p></p>
+            Wins: <p id="totalWins"></p>
+
+            Number of Guesses Remaining: <p id="guessesRemaining"></p>
+
+            Letters Already Guessed: <p id="alreadyGuessed"></p>
+
+        </div>
+
 
     </div>
-
-    <!-- This will be the word you are guessing -->
-    <div id="the-word">
-
-    </div>
-
-    <!-- This is the score -->
-    <div>
-        <p></p>
-        Wins: <p id="totalWins"></p>
-
-        Number of Guesses Remaining: <p id="guessesRemaining"></p>
-
-        Letters Already Guessed: <p id="alreadyGuessed"></p>
-
-    </div>
-
-
-
 
 </body>
 
