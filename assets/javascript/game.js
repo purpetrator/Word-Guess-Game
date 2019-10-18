@@ -39,6 +39,7 @@ var chosenWord;
 
 // Create variables that hold references to the places in the HTML
 var directionsText = document.getElementById("directions-text");
+var guessDog = document.getElementById("guess-dog-text");
 var wordElement = document.getElementById("the-word");
 
 var winsText = document.getElementById("totalWins");
@@ -102,6 +103,7 @@ document.onkeydown = function(event) {
 
     // Hide the directions
     directionsText.textContent = "";
+    guessDog.textContent = "Guess the dog breed!";
 
     // Display the wins and guesses on the screen
     guessesRemaining.textContent = " " + remaining;

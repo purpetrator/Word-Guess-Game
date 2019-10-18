@@ -2,8 +2,6 @@ body {
   background-image: url("Assets/images/pink_rice.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.jumbotron {
-  background-color: #f9f7f6;
+  font-family: "Patua One";
+  background-color: aquamarine;
 }

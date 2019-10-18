@@ -4,38 +4,51 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="Word-Guess-Game/assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
 
     <title>Word Guessing Game</title>
+
+    <Style>
+        body {
+            background-image: url("Assets/images/cartoon.jpg");
+            font-family: 'Patua One', cursive;
+            ;
+        }
+    </Style>
 </head>
 
 <body>
-    <!-- This is the starting message that will disappear -->
-    <div class="container my-4 bg-light p-3 rounded m-3 mx-auto">
-        <div>
-            <p id="directions-text">Press ANY KEY to get started!</p>
+
+    <div class="container bg-light p-3 rounded m-3 mx-auto w-75">
+
+        <div class="col-9 p-3 mb-2 bg-light col-sm-12 col-md-12 col-lg-9">
+            <!-- This is the starting message that will disappear -->
+            <div>
+                <span id="directions-text">Press ANY KEY to get started.</span>
+                <span id="guess-dog-text"> </span>
+            </div>
+
+
+
+            <!-- This will be the word you are guessing -->
+            <div id="the-word">
+
+            </div>
+
+            <!-- This is the score -->
+            <div>
+                <p></p>
+                Wins: <span id="totalWins"></span><br /><br />
+
+                Number of Guesses Remaining: <span id="guessesRemaining"></span><br /><br />
+
+                Letters Already Guessed:<br /><br />
+                <p id="alreadyGuessed"></p><br />
+
+            </div>
+
 
         </div>
-
-        <!-- This will be the word you are guessing -->
-        <div id="the-word">
-
-        </div>
-
-        <!-- This is the score -->
-        <div>
-            <p></p>
-            Wins: <p id="totalWins"></p>
-
-            Number of Guesses Remaining: <p id="guessesRemaining"></p>
-
-            Letters Already Guessed: <p id="alreadyGuessed"></p>
-
-        </div>
-
-
-    </div>
 
 </body>
 
